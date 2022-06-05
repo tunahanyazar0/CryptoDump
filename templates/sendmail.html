@@ -1,0 +1,17 @@
+{%  extends "layout.html" %}
+
+{% block title %}
+    Mail
+{% endblock %}
+
+{% block main %}
+    <form action="/mail" method="post">
+        <input type="text" name="sender" placeholder="Your Mail" autocomplete="off" style="align-self:center;">
+        <br><br>
+        <textarea id="content" name="content"
+          rows="6" cols="33"></textarea>
+          <br><br>
+        <input type="submit" value="Send">
+    </form>
+    <br><br><br>
+{% endblock %}

@@ -1,0 +1,32 @@
+{%  extends "layout.html" %}
+
+{% block title %}
+    Market
+{% endblock %}
+
+{% block main %}
+<table class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">Stock</th>
+      <th scope="col">Open</th>
+      <th scope="col">High</th>
+      <th scope="col">Low</th>
+      <th scope="col">Close</th>
+      <th scope="col">Volume</th>
+    </tr>
+  </thead>
+  <tbody> 
+  {% for stock in stocks %}
+  <tr>
+      <td class="table-secondary">{{ stock[0] }}</td>
+      <td class="table-primary">{{ "{:.2f}".format(stock[1]["Open"][0]) }}</td>
+      <td class="table-success">{{ "{:.2f}".format(stock[1]["High"][0]) }}</td>
+      <td class="table-danger">{{ "{:.2f}".format(stock[1]["Low"][0]) }}</td>
+      <td class="table-warning">{{ "{:.2f}".format(stock[1]["Close"][0]) }}</td>
+      <td class="table-dark">{{ "{:.2f}".format(stock[1]["Volume"][0]) }}</td>
+  </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

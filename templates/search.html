@@ -1,0 +1,33 @@
+{%  extends "layout.html" %}
+
+{% block title %}
+    Market
+{% endblock %}
+
+{% block main %}
+<h2>The price of the {{ ticker }} for the last 5 days</h2>
+<hr>
+<table class="table table-borderless">
+    <thead>
+      <tr>
+        <th scope="col">Open</th>
+        <th scope="col">High</th>
+        <th scope="col">Low</th>
+        <th scope="col">Close</th>
+        <th scope="col">Volume</th>
+      </tr>
+    </thead>
+    <tbody> 
+    {% for stock in data %}
+    <tr>
+        <td class="table-primary">{{ stock["Open"] }}</td>
+        <td class="table-success">{{ stock["High"] }}</td>
+        <td class="table-danger">{{ stock["Low"] }}</td>
+        <td class="table-warning">{{ stock["Close"] }}</td>
+        <td class="table-dark">{{ stock["Volume"] }}</td>
+    </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
